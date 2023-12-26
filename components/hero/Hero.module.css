@@ -1,0 +1,64 @@
+.heroContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.heroContainer .heroTitle {
+    line-height: 1.1;
+    font-size: 2.7rem;
+    font-weight: 800;
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+    color: #fff;
+    margin-bottom: 1.2rem;
+    margin-top: 3rem;
+}
+
+.heroContainer .heroTitle span {
+    color: #ED2024;
+}
+
+.heroContainer .heroTitle .spaceLeft {
+    margin-left: 8px;
+}
+
+.heroContainer .smallTitle {
+    font-size: 0.95rem;
+    color: #c7c7c7;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.heroContainer .smallTitle p{
+    margin: 0.4rem 0;
+}
+
+.heroContainer .buttonBox {
+    display: flex;
+    gap: 3rem;
+}
+
+.heroContainer .btnRed {
+    background: #ED2024;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.heroContainer .btnRed:hover {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #ED2024;
+}
+
+.heroContainer .btnBlue:hover {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #ED2024;
+}
