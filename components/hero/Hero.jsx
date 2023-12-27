@@ -14,11 +14,11 @@ const Hero = () => {
                     cutting edge password protected algorithms.
                 </p>
                 <p>
-                    flexible sharing models that allows you to send email or share URL link.
+                    Flexible file sharing models that allows you to send email or share URL link.
                 </p>
             </div>
             <div className={styles.buttonBox}>
-                <button className={styles.btnRed}>Get Started</button>
+                <a href="/files">  <button className={styles.btnRed}>Get Started</button></a>
                 <button className={styles.btnBlue}>About Us</button>
             </div>
         </div>

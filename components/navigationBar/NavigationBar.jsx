@@ -20,7 +20,7 @@ const NavigationBar = () => {
 
             <header>
                 <a className='title' href="/">
-                    <h1>SimpleFiles</h1>
+                    <h1>SimpleShare</h1>
                 </a>
 
                 <nav ref={navRef}>
@@ -40,7 +40,7 @@ const NavigationBar = () => {
                 {/* user account */}
                 <a to="/contact">
                     <div className="user-box" >
-                        <h4>Get Started</h4>
+                        <a href='/files'>Get Started</a>
                     </div>
                 </a>
                 {/* user account */}

@@ -1,10 +1,11 @@
 import React from 'react'
+import SideNav from './[cmponents]/SideNav'
 
 const layout = ({ children }) => {
     return (
 
         <div>
-            <h1>Home</h1>
+            <SideNav />
             {children}
         </div>
     )

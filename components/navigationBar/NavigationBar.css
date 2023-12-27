@@ -14,7 +14,6 @@
 header {
     width: 100%;
     margin: 0 auto;
-    margin-top: 1rem;
     border-bottom: 1px solid #d3c5c5;
     z-index: 900;
     position: fixed;
@@ -72,7 +71,7 @@ nav {
     z-index: 920;
 }
 
-.user-box h4 {
+.user-box a {
     font-size: 16px;
     font-weight: 400;
     color: #fff;
