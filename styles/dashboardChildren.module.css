@@ -1,0 +1,11 @@
+
+
+.childrenContainer{
+    margin-left: 250px;
+}
+
+@media only screen and (max-width: 900px) {
+    .childrenContainer{
+        margin-left: 0;
+    }
+}

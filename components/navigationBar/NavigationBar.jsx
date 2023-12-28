@@ -38,11 +38,11 @@ const NavigationBar = () => {
                 </nav>
 
                 {/* user account */}
-                <a to="/contact">
+                {/* <a to="/contact"> */}
                     <div className="user-box" >
                         <a href='/files'>Get Started</a>
                     </div>
-                </a>
+                {/* </a> */}
                 {/* user account */}
 
 

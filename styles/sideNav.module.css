@@ -1,0 +1,140 @@
+.sideBarContainer {
+    height: 100vh;
+    border: 1px solid gray;
+    width: 250px;
+    position: fixed;
+}
+
+.sideBarContainer .title {
+    border-bottom: 1px solid gray;
+    font-size: 1.4rem;
+    margin-bottom: 1.8rem;
+    padding: 1rem 0.5rem;
+}
+
+.sideBarContainer .menuListBtn {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    margin: 1rem 0;
+    background: #f8f8f8;
+}
+
+.sideBarContainer .menuListBtn .menuListIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.sideBarContainer .menuListBtn p {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.sideBarContainer .menuListBtnActive {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    margin-bottom: 1rem;
+    background: linear-gradient(270deg, #24c6dc, #514a9d);
+    color: #fff;
+}
+
+.sideBarContainer .menuListBtnActive .menuListIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.sideBarContainer .menuListBtnActive p {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.sideBarContainer .menuListBtn:hover {
+    background: linear-gradient(270deg, #3c858f, #a49ee4);
+}
+
+
+
+/* for mobile */
+/* for mobile */
+/* for mobile */
+
+.sideBarContainerShow {
+    height: 100vh;
+    border: 1px solid grey;
+    width: 250px;
+    position: fixed;
+    /* padding: 1rem 0; */
+}
+
+.sideBarContainerShow h1 {
+    border-bottom: 1px solid gray;
+    font-size: 1.4rem;
+    margin-bottom: 1.8rem;
+    padding: 1rem 0.5rem;
+}
+
+.sideBarContainerShow .menuListBtn {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    margin: 1rem 0;
+    background: #f8f8f8;
+}
+
+.sideBarContainerShow .menuListBtn .menuListIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.sideBarContainerShow .menuListBtn p {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.sideBarContainerShow .menuListBtnActive {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    margin-bottom: 1rem;
+    background: linear-gradient(270deg, #24c6dc, #514a9d);
+    color: #fff;
+}
+
+.sideBarContainerShow .menuListBtnActive .menuListIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.sideBarContainerShow .menuListBtnActive p {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+/* for mobile */
+/* for mobile */
+/* for mobile */
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .sideBarContainer {
+        display: none;
+    }
+
+    .sideBarContainerShow {
+        display: block;
+    }
+
+    .sideBarContainerShow .title {
+        display: none;
+    }
+}

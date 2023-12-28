@@ -1,0 +1,35 @@
+
+.topNavContainer {
+    height: 76.5px;
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+.topNavContainer .title {
+    font-size: 1.1rem;
+    display: none;
+}
+
+.topNavContainer .menuIcon {
+    z-index: 100;
+    border: 1px solid blue;
+    cursor: pointer;
+    display: none;
+    width: 30px;
+    height: 30px;
+}
+
+
+@media only screen and (max-width: 900px) {
+    .topNavContainer .menuIcon {
+        display: flex;
+    }
+
+    .topNavContainer .title {
+        font-size: 1.1rem;
+        display: flex;    
+    }
+}
