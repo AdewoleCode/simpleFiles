@@ -1,0 +1,74 @@
+.uploadFormContainer {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uploadFormContainer .labelWrapper {
+    padding: 3rem 1rem;
+    background-color: rgb(61, 66, 80);
+    background: linear-gradient(270deg, #24c6dc, #514a9d);
+
+    width: 850px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 6px;
+}
+
+.uploadFormContainer .labelWrapper .labelFor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.uploadFormContainer .formIcon {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.uploadFormContainer .labelWrapper .labelFor p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.uploadFormContainer .labelWrapper .labelFor h4 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.uploadFormBtnWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1.3rem 0 3rem 0;
+}
+
+.uploadFormBtnWrapper .uploadFormBtn {
+    background-color: rgb(38, 54, 95);
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 0.75rem;
+}
+
+.uploadFormBtn:disabled {
+    background-color: grey;
+    color:#c2c1c1;
+    cursor:not-allowed;
+}
+
+.UploadFormHeader {
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 2rem 0 1.2rem 0;
+    color: rgb(38, 54, 95);
+}

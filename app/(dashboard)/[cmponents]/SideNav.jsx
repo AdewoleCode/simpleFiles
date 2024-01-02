@@ -5,6 +5,8 @@ import { IoCloudUploadSharp } from "react-icons/io5";
 import { PiFilesFill } from "react-icons/pi";
 import { GiUpgrade } from "react-icons/gi";
 import { BiSolidMessageDetail } from "react-icons/bi";
+import Link from 'next/link';
+
 
 
 const SideNav = ({ showSidebarMobile }) => {
@@ -43,14 +45,19 @@ const SideNav = ({ showSidebarMobile }) => {
       <h1 className={styles.title}>SIMPLESHARE</h1>
       {
         menuList.map((item, index) => (
-          <button
-            className={activeIndex === index ? styles.menuListBtnActive : styles.menuListBtn}
-            key={item.id}
-            onClick={() => setActiveIndex(index)}
-          >
-            <item.icon className={styles.menuListIcon} />
-            <p>{item.name}</p>
-          </button>
+          <Link href={`${item.path}`}>
+
+            <button
+              className={activeIndex === index ? styles.menuListBtnActive : styles.menuListBtn}
+              key={item.id}
+              onClick={() => setActiveIndex(index)}
+            >
+              <item.icon className={styles.menuListIcon} />
+              <p>{item.name}</p>
+
+            </button>
+          </Link>
+
         ))
       }
     </div>

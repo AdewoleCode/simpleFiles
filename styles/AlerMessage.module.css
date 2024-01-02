@@ -1,0 +1,53 @@
+.alertMessageBox {
+    background-color:  #ED2024;
+    color: #fff;
+    width: 850px;
+    padding: 1rem 1rem;
+    margin: 1rem auto;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.alertMessageBox .top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.alertMessageBox .iconTop{
+    width: 25px;
+    height: 25px;
+    
+}
+
+.alertMessageBox h2 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.alertMessageBox .bottom {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.alertMessageBox .bottom a {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid #fff;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    background: linear-gradient(270deg, #24c6dc, #514a9d);
+    color: #fff;
+}
+
+.alertMessageBox .bottom a span {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
