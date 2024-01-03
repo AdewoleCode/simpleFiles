@@ -3,13 +3,19 @@
     border: 1px solid gray;
     width: 250px;
     position: fixed;
+    background: red;
 }
 
 .sideBarContainer .title {
     border-bottom: 1px solid gray;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     margin-bottom: 1.8rem;
     padding: 1rem 0.5rem;
+    color: #0A1A83;
+    color: #0A1A83;
+    font-weight: 800;
+
+
 }
 
 .sideBarContainer .menuListBtn {
@@ -28,7 +34,7 @@
 }
 
 .sideBarContainer .menuListBtn p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     font-weight: 500;
 }
 
@@ -68,14 +74,17 @@
     border: 1px solid grey;
     width: 250px;
     position: fixed;
+    background: #e2e1e1;
     /* padding: 1rem 0; */
 }
 
 .sideBarContainerShow h1 {
     border-bottom: 1px solid gray;
-    font-size: 1.4rem;
+    font-size: 1.15rem;
     margin-bottom: 1.8rem;
     padding: 1rem 0.5rem;
+    color: #0A1A83;
+    font-weight: 800;
 }
 
 .sideBarContainerShow .menuListBtn {
@@ -94,7 +103,7 @@
 }
 
 .sideBarContainerShow .menuListBtn p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
 }
 
@@ -118,6 +127,7 @@
     font-size: 0.9rem;
     font-weight: 500;
 }
+
 /* for mobile */
 /* for mobile */
 /* for mobile */

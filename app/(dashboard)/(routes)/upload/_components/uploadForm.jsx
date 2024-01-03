@@ -4,7 +4,7 @@ import AlertMessage from './AlertMessage'
 import FilePreview from './FilePreview'
 import { BsCloudUpload } from "react-icons/bs"
 
-const uploadForm = () => {
+const uploadForm = ({uploadBtnClick}) => {
     const [file, setFile] = useState()
     const [errorMsg, setErrorMsg] = useState()
 
@@ -30,7 +30,7 @@ const uploadForm = () => {
                             Click to Upload or Drag and Drop file
                         </p>
                         <h4>
-                            files supported includes SVG, PNG, PDF, MP4, MP3 (max size 2MB)
+                            files supported includes SVG, PNG, PDF, TXT, ZIP, MP3 (max size 2MB)
                         </h4>
                     </label>
                     <input
@@ -50,7 +50,9 @@ const uploadForm = () => {
             <div className={styles.uploadFormBtnWrapper}>
                 <button
                     className={styles.uploadFormBtn}
-                    disabled={!file}>
+                    disabled={!file}
+                    // onClick={() => uploadBtnClick(file)}
+                >
                     Upload
                 </button>
             </div>

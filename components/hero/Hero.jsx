@@ -5,7 +5,9 @@ const Hero = () => {
     return (
         <div className={styles.heroContainer}>
             <h1 className={styles.heroTitle}>One quick stop to <span>U</span>pload,
-                <span className={styles.spaceLeft}>O</span>rganize and <span>S</span>hare your files.</h1>
+                <span className={styles.spaceLeft}>O</span>rganize and <span>S</span>hare your 
+               <span style={{color: 'color: #d44346s', margin: '0 15px'}}>Sensitive</span> 
+                 files.</h1>
             <div className={styles.smallTitle}>
                 <p>
                     Drag and drop files directly onto our cloud servers.
@@ -18,7 +20,7 @@ const Hero = () => {
                 </p>
             </div>
             <div className={styles.buttonBox}>
-                <a href="/files">  <button className={styles.btnRed}>Get Started</button></a>
+                <a href="/upload">  <button className={styles.btnRed}>Get Started</button></a>
                 <button className={styles.btnBlue}>About Us</button>
             </div>
         </div>

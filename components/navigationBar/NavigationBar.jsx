@@ -40,7 +40,7 @@ const NavigationBar = () => {
                 {/* user account */}
                 {/* <a to="/contact"> */}
                     <div className="user-box" >
-                        <a href='/files'>Get Started</a>
+                        <a href='/upload'>Get Started</a>
                     </div>
                 {/* </a> */}
                 {/* user account */}
