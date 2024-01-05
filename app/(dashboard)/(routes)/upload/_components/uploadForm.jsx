@@ -3,15 +3,17 @@ import styles from "../../../../../styles/uploadForm.module.css"
 import AlertMessage from './AlertMessage'
 import FilePreview from './FilePreview'
 import { BsCloudUpload } from "react-icons/bs"
+import ProgressBar from './ProgressBar'
+import SucessPopUp from './SucessPopUp'
 
-const uploadForm = ({uploadBtnClick}) => {
-    const [file, setFile] = useState()
+const uploadForm = ({ uploadBtnClick, progress, file, setFile, uploading, openSuccessModal, setOpenSuccessModal }) => {
+    // const [file, setFile] = useState()
     const [errorMsg, setErrorMsg] = useState()
 
     const onFileSelect = (file) => {
         console.log(file);
 
-        if (file && file.size > 2000000) {
+        if (file && file.size > 3000000) {
             setErrorMsg('File Too Large')
             return;
         } else {
@@ -30,7 +32,7 @@ const uploadForm = ({uploadBtnClick}) => {
                             Click to Upload or Drag and Drop file
                         </p>
                         <h4>
-                            files supported includes SVG, PNG, PDF, TXT, ZIP, MP3 (max size 2MB)
+                            files supported includes SVG, PNG, PDF, TXT, ZIP, MP3 (max size 3MB)
                         </h4>
                     </label>
                     <input
@@ -48,14 +50,21 @@ const uploadForm = ({uploadBtnClick}) => {
                 file && <FilePreview file={file} setFile={setFile} />
             }
             <div className={styles.uploadFormBtnWrapper}>
-                <button
-                    className={styles.uploadFormBtn}
-                    disabled={!file}
-                    // onClick={() => uploadBtnClick(file)}
-                >
-                    Upload
-                </button>
+                {
+                    progress > 0 ? <ProgressBar progress={progress} />
+                        :
+                        <button
+                            className={styles.uploadFormBtn}
+                            disabled={!file || uploading}
+                            onClick={() => uploadBtnClick(file)}
+                        >
+                            {
+                                uploading ? "uploading" : "upload"
+                            }
+                        </button>
+                }
             </div>
+            <SucessPopUp setIsOpen={setOpenSuccessModal} isOpen={openSuccessModal}/>
         </>
     )
 }

@@ -3,17 +3,35 @@ import React, { useState } from 'react'
 import UploadForm from './_components/uploadForm'
 import styles from "../../../../styles/uploadForm.module.css"
 import { app } from "../../../../utils/FirebaseConfig"
-// import ref
 import { getStorage } from "firebase/storage"
+import { getFirestore } from "firebase/firestore"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
+import { toast } from "react-toastify";
 
 const Upload = () => {
 
+    const toastOptions = {
+        position: "bottom-right",
+        autoClose: 3000,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+    }
+
     const [url, seturl] = useState()
+    const [progress, setProgress] = useState(0)
+    const [file, setFile] = useState()
+    const [uploading, setUploading] = useState(false)
+    const [openSuccessModal, setOpenSuccessModal] = useState(false)
+
+
+
 
     const storage = getStorage(app)
+    const db = getFirestore(app)
 
     const uploadFile = (file) => {
+        setUploading(true)
 
         const metaData = {
             contentType: file.type
@@ -26,10 +44,16 @@ const Upload = () => {
         uploadTask.on('state_changed', (snapshot) => {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
             console.log(progress)
+            setProgress(progress)
 
-            getDownloadURL(uploadTask.snapshot.ref).then(url => {
-                console.log(`file available at` + url);
+            progress == 100 && getDownloadURL(uploadTask.snapshot.ref).then(url => {
+                toast.success("upload succesful", toastOptions)
+                setProgress(0)
+                setOpenSuccessModal(true)
                 seturl(url)
+
+                setFile(null)
+                setUploading(false)
             })
         },
             (err) => {
@@ -51,8 +75,16 @@ const Upload = () => {
     return (
         <div className={styles.uploadPageContainer}>
             <h2 className={styles.UploadFormHeader}>Upload a file to share!</h2>
-            <UploadForm uploadBtnClick={(file) => uploadFile(file)} />
-            <a href={url}><h3>{url}</h3></a>
+            <UploadForm
+                file={file}
+                setFile={setFile}
+                uploadBtnClick={(file) => uploadFile(file)}
+                progress={progress}
+                uploading={uploading}
+                openSuccessModal={openSuccessModal}
+                setOpenSuccessModal={setOpenSuccessModal}
+            />
+            {/* <a href={url}><h3>{url}</h3></a> */}
         </div>
     )
 }

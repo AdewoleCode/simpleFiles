@@ -1,0 +1,26 @@
+
+.progressBarContainer {
+    height: 24px;
+    width: 850px;
+    margin: 0 auto;
+    background: gray;
+    border-radius: 10px;
+    padding: 0 0.1rem;
+}
+
+.progressBarContainer .progressBarChild {
+    background: linear-gradient(270deg, #24c6dc, #514a9d);
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progressBarContainer .progressBarChild span {
+    color: #fff;
+    margin-left: 15px;
+    font-size: 0.85;
+    font-weight: 700;
+}
