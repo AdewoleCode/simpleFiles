@@ -6,8 +6,15 @@ import { BsCloudUpload } from "react-icons/bs"
 import ProgressBar from './ProgressBar'
 import SucessPopUp from './SucessPopUp'
 
-const uploadForm = ({ uploadBtnClick, progress, file, setFile, uploading, openSuccessModal, setOpenSuccessModal }) => {
-    // const [file, setFile] = useState()
+const uploadForm = ({
+    uploadBtnClick,
+    progress,
+    file,
+    setFile,
+    uploading,
+    openSuccessModal,
+    setOpenSuccessModal
+}) => {
     const [errorMsg, setErrorMsg] = useState()
 
     const onFileSelect = (file) => {
@@ -64,7 +71,7 @@ const uploadForm = ({ uploadBtnClick, progress, file, setFile, uploading, openSu
                         </button>
                 }
             </div>
-            <SucessPopUp setIsOpen={setOpenSuccessModal} isOpen={openSuccessModal}/>
+            <SucessPopUp setIsOpen={setOpenSuccessModal} isOpen={openSuccessModal} />
         </>
     )
 }

@@ -6,7 +6,6 @@ const Hero = () => {
         <div className={styles.heroContainer}>
             <h1 className={styles.heroTitle}>One quick stop to <span>U</span>pload,
                 <span className={styles.spaceLeft}>O</span>rganize and <span>S</span>hare your 
-               <span style={{color: 'color: #d44346s', margin: '0 15px'}}>Sensitive</span> 
                  files.</h1>
             <div className={styles.smallTitle}>
                 <p>
