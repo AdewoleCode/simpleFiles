@@ -4,28 +4,19 @@ import UploadForm from './_components/uploadForm'
 import styles from "../../../../styles/uploadForm.module.css"
 import { app } from "../../../../utils/FirebaseConfig"
 import { getStorage } from "firebase/storage"
-import { getFirestore } from "firebase/firestore"
+import { doc, getFirestore, setDoc } from "firebase/firestore"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
-import { toast } from "react-toastify";
+import { useUser } from '@clerk/nextjs'
+import { generateRandomStrings } from '@/utils/generateRandomStrings'
 
 const Upload = () => {
 
-    const toastOptions = {
-        position: "bottom-right",
-        autoClose: 3000,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "light",
-    }
+    const { user } = useUser()
 
-    const [url, seturl] = useState()
     const [progress, setProgress] = useState(0)
     const [file, setFile] = useState()
     const [uploading, setUploading] = useState(false)
     const [openSuccessModal, setOpenSuccessModal] = useState(false)
-
-
-
 
     const storage = getStorage(app)
     const db = getFirestore(app)
@@ -33,9 +24,9 @@ const Upload = () => {
     const uploadFile = (file) => {
         setUploading(true)
 
-        const metaData = {
-            contentType: file.type
-        }
+        // const metaData = {
+        //     contentType: file.type
+        // }
 
         // create a refernce to the bucket where you want files stored.
         const fileStorageRef = ref(storage, 'simpleshare-files/' + file?.name)
@@ -46,12 +37,10 @@ const Upload = () => {
             console.log(progress)
             setProgress(progress)
 
-            progress == 100 && getDownloadURL(uploadTask.snapshot.ref).then(url => {
-                toast.success("upload succesful", toastOptions)
+            progress == 100 && getDownloadURL(uploadTask.snapshot.ref).then(downloadUrl => {
+                saveDocToFirestore(file, downloadUrl)
                 setProgress(0)
                 setOpenSuccessModal(true)
-                seturl(url)
-
                 setFile(null)
                 setUploading(false)
             })
@@ -59,17 +48,24 @@ const Upload = () => {
             (err) => {
                 setError(err)
                 console.log(err);
-            },
-            // () => {
-            //     getDownloadURL(uploadTask.snapshot.ref).then(url => {
-            //         setUrl(url)
-            //         const imageCollectionRef = doc(projectFirestore, "images", file.name)
-            //         setDoc(imageCollectionRef, {
-            //             imageUrl: url
-            //         })
-            //     })
-            // }
+            }
         )
+    }
+
+    const saveDocToFirestore = async (file, downloadURL) => {
+        const docId = generateRandomStrings()
+
+        await setDoc(doc(db, "uploadedFileData", docId), {
+            fileName: file?.name,
+            fileSize: file?.size,
+            fileType: file?.type,
+            fileURL: downloadURL,
+            userEmail: user?.primaryEmailAddress.emailAddress,
+            userName: user?.fullName,
+            password: "",
+            id: docId,
+            shortURL: process.env.NEXT_PUBLIC_BASE_URL + docId
+        })
     }
 
     return (
@@ -84,7 +80,6 @@ const Upload = () => {
                 openSuccessModal={openSuccessModal}
                 setOpenSuccessModal={setOpenSuccessModal}
             />
-            {/* <a href={url}><h3>{url}</h3></a> */}
         </div>
     )
 }
