@@ -1,0 +1,223 @@
+/* main file detail page */
+.fileDetailContainer {
+    padding: 1rem 2rem;
+}
+
+.fileDetailContainer .backUpload {
+    color: #fff;
+    color: #514a9d;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fileDetailContainer .subContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 3rem;
+}
+/* main file detail page */
+
+
+/* file detail image and info page */
+.fileDetailBox {
+    width: 370px;
+    border: 0.2px solid rgb(38, 54, 95);
+    padding: 1.7rem 0.5rem;
+    border-radius: 5px;
+    
+}
+
+.fileDetailBox .topfileDetailBox {
+    padding: 0rem 1.5rem;
+}
+
+.fileDetailBox .bottomFileDetailBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fileDetailBox .bottomFileDetailBox h2 {
+    font-size: 1rem;
+    margin-top: 1.3rem;
+    color: #fff;
+    color: rgb(38, 54, 95);
+    text-align: center;
+}
+
+.fileDetailBox .bottomFileDetailBox p {
+    font-size: 0.95rem;
+    color: rgb(38, 54, 95);
+}
+
+/* file detail image and info page */
+
+
+/* fileshareshorm styles */
+
+.fileShareFormContainer {
+    width: 370px;
+    padding: 0.5rem 1.3rem;
+    border-radius: 5px;
+    
+}
+
+.fileShareFormContainer .urlBox {
+    margin-bottom: 1.2rem;
+}
+
+.fileShareFormContainer .urlBox label {
+    font-size: 0.9rem;
+    color: grey;
+    margin-bottom: 0.5rem;
+}
+
+.fileShareFormContainer .inputBox {
+    margin-top: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.25rem;
+    gap: 5px;
+    border: 1px solid rgb(38, 54, 95);
+    padding: 0.5rem;
+    border-radius: 3px;
+}
+
+.fileShareFormContainer .inputBox .copyIcon {
+    width: 40px;
+    height: 25px;
+    cursor: pointer;
+    color: #514a9d;
+    transition: 0.2s all ease-in;
+}
+
+.fileShareFormContainer .inputBox .copyIcon:hover {
+   transform: scale(1.2);
+}
+
+
+.fileShareFormContainer .inputBox input {
+    border: none;
+    outline: none;
+}
+
+.fileShareFormContainer .inputBox input::value{
+    font-size: 1.5rem;
+}
+
+.fileShareFormContainer .passwordBox {
+    display: flex;
+    font-size: 0.9rem;
+    color: grey;
+    margin-top: 0.3rem;
+    gap: 0.5rem;
+}
+
+.fileShareFormContainer .isPassEnabled {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 0.4rem;
+}
+
+.fileShareFormContainer .isPassEnabled .passInput {
+    width: 100%;
+    padding: 0.25rem 0.3rem;
+    border: 1px solid grey;
+    border-radius: 3px;
+
+}
+
+.fileShareFormContainer .isPassEnabled .passInput input {
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+.fileShareFormContainer .isPassEnabled .enableBtn {
+    background-color: #514a9d;
+    color: #fff;
+    width: 80px;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.fileShareFormContainer .isPassEnabled .enableBtn:disabled {
+    background-color: gray;
+    color: #cec9c9;
+}
+
+.fileShareFormContainer .sendBox {
+    border: 1px solid grey;
+    margin-top: 1.5rem;
+    padding: 1rem 0.5rem;
+    border-radius: 4px;
+}
+
+.fileShareFormContainer .sendBox label {
+    font-size: 0.9rem;
+    color: grey;
+}
+
+.fileShareFormContainer .sendBox input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 0.5rem 0.3rem;
+    border: 1px solid grey;
+    margin: 0.6rem 0 0.9rem 0;
+    border-radius: 3px;
+}
+
+.fileShareFormContainer .sendBox button {
+    width: 100%;
+    background-color: #514a9d;
+    padding: 0.5rem;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* fileshareshorm styles */
+
+
+
+/* password alert update stylings */
+
+.updateAlertBox {
+    background:linear-gradient(337deg, #654ea3, #da98b4);
+    position: relative;
+    padding: 1rem 0.5rem;
+    margin-top: 1rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+}
+
+.updateAlertBox .cancelIcon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.25s all ease-out;
+}
+
+.updateAlertBox .cancelIcon:hover {
+    transform: scale(1.2);
+}
+
+.updateAlertBox h3 {
+    font-size: 0.9rem;
+}
+
+/* password alert update stylings */

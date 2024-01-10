@@ -4,9 +4,12 @@ import { FaTimes } from "react-icons/fa"
 import { FaBars } from "react-icons/fa"
 import "./NavigationBar.css"
 import { useRef } from 'react';
+import { useUser } from '@clerk/nextjs'
 
 
 const NavigationBar = () => {
+
+    const { user } = useUser()
 
     const navRef = useRef();
 
@@ -39,9 +42,9 @@ const NavigationBar = () => {
 
                 {/* user account */}
                 {/* <a to="/contact"> */}
-                    <div className="user-box" >
-                        <a href='/upload'>Get Started</a>
-                    </div>
+                <div className="user-box" >
+                    <a href='/upload'>{user ? "Dashboard" : "Get Started"}</a>
+                </div>
                 {/* </a> */}
                 {/* user account */}
 

@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import UploadForm from './_components/uploadForm'
 import styles from "../../../../styles/uploadForm.module.css"
 import { app } from "../../../../utils/FirebaseConfig"
@@ -8,8 +8,11 @@ import { doc, getFirestore, setDoc } from "firebase/firestore"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 import { useUser } from '@clerk/nextjs'
 import { generateRandomStrings } from '@/utils/generateRandomStrings'
+import { useRouter } from 'next/navigation'
 
 const Upload = () => {
+
+    const router = useRouter()
 
     const { user } = useUser()
 
@@ -17,6 +20,8 @@ const Upload = () => {
     const [file, setFile] = useState()
     const [uploading, setUploading] = useState(false)
     const [openSuccessModal, setOpenSuccessModal] = useState(false)
+    const [fileDocId, setFileDocId] = useState()
+    const [uploadCompleted, setUploadCompleted] = useState(false)
 
     const storage = getStorage(app)
     const db = getFirestore(app)
@@ -34,7 +39,6 @@ const Upload = () => {
 
         uploadTask.on('state_changed', (snapshot) => {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-            console.log(progress)
             setProgress(progress)
 
             progress == 100 && getDownloadURL(uploadTask.snapshot.ref).then(downloadUrl => {
@@ -43,17 +47,15 @@ const Upload = () => {
                 setOpenSuccessModal(true)
                 setFile(null)
                 setUploading(false)
+                setUploadCompleted(true)
             })
-        },
-            (err) => {
-                setError(err)
-                console.log(err);
-            }
+        }
         )
     }
 
     const saveDocToFirestore = async (file, downloadURL) => {
         const docId = generateRandomStrings()
+        setFileDocId(docId)
 
         await setDoc(doc(db, "uploadedFileData", docId), {
             fileName: file?.name,
@@ -64,8 +66,21 @@ const Upload = () => {
             userName: user?.fullName,
             password: "",
             id: docId,
-            shortURL: process.env.NEXT_PUBLIC_BASE_URL + docId
+            shortURL: process.env.NEXT_PUBLIC_BASE_URL + 'viewFile/' + docId
         })
+    }
+
+    useEffect(() => {
+        if (uploadCompleted) {
+            redirectToPreview()
+        }
+    }, [uploadCompleted])
+
+    const redirectToPreview = () => {
+        console.log(fileDocId);
+        setTimeout(() => {
+            router.push('/file-detail/' + fileDocId)
+        }, 1000)
     }
 
     return (

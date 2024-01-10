@@ -3,7 +3,7 @@ export const generateRandomStrings = () => {
 
     let result = ''
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
         result += charaters.charAt(Math.floor(Math.random() * charaters.length))
     }
 
