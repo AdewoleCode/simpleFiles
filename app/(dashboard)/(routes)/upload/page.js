@@ -66,7 +66,7 @@ const Upload = () => {
             userName: user?.fullName,
             password: "",
             id: docId,
-            shortURL: NEXT_PUBLIC_PRODUCTION_URL + 'viewFile/' + docId
+            shortURL: process.env.NEXT_PUBLIC_PRODUCTION_URL + 'viewFile/' + docId
         })
     }
 
