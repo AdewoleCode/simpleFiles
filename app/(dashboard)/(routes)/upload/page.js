@@ -77,7 +77,6 @@ const Upload = () => {
     }, [uploadCompleted])
 
     const redirectToPreview = () => {
-        console.log(fileDocId);
         setTimeout(() => {
             router.push('/file-detail/' + fileDocId)
         }, 1000)

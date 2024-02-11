@@ -82,7 +82,18 @@ const FileShareForm = ({
                 passwordUpdateComplete={passwordUpdateComplete}
             />
 
-            {/* <div className={style.sendBox}>
+       
+        </div>
+    ) :
+        <Spinner />
+}
+
+export default FileShareForm
+
+
+
+
+     {/* <div className={style.sendBox}>
                 <label>Send File to Email</label>
                 <input
                     type='email'
@@ -92,9 +103,3 @@ const FileShareForm = ({
                     <button>Send Email</button>
                 </div>
             </div> */}
-        </div>
-    ) :
-        <Spinner />
-}
-
-export default FileShareForm

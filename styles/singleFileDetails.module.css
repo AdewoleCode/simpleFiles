@@ -60,10 +60,11 @@
 /* fileshareshorm styles */
 
 .fileShareFormContainer {
-    width: 370px;
+    width: 400px;
     padding: 0.5rem 1.3rem;
     border-radius: 5px;
-    
+    /* border: 1px solid red; */
+    /* height: 350px; */
 }
 
 .fileShareFormContainer .urlBox {
@@ -77,6 +78,7 @@
 }
 
 .fileShareFormContainer .inputBox {
+    width: 100%;
     margin-top: 0.3rem;
     display: flex;
     align-items: center;
@@ -86,6 +88,10 @@
     border: 1px solid rgb(38, 54, 95);
     padding: 0.5rem;
     border-radius: 3px;
+}
+
+.fileShareFormContainer .inputBox input{
+    width: 100%;
 }
 
 .fileShareFormContainer .inputBox .copyIcon {

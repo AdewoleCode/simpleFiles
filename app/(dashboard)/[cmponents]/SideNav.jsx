@@ -25,12 +25,12 @@ const SideNav = ({ showSidebarMobile }) => {
       icon: PiFilesFill,
       path: '/files'
     },
-    {
-      id: 3,
-      name: 'Upgrade',
-      icon: GiUpgrade,
-      path: '/upgrade'
-    },
+    // {
+    //   id: 3,
+    //   name: 'Upgrade',
+    //   icon: GiUpgrade,
+    //   path: '/upgrade'
+    // },
     {
       id: 4,
       name: 'Newsletter',

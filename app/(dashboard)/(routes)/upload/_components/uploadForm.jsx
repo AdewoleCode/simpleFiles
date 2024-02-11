@@ -20,7 +20,7 @@ const uploadForm = ({
     const onFileSelect = (file) => {
         console.log(file);
 
-        if (file && file.size > 3000000) {
+        if (file && file.size > 5000000) {
             setErrorMsg('File Too Large')
             return;
         } else {
@@ -39,7 +39,7 @@ const uploadForm = ({
                             Click to Upload or Drag and Drop file
                         </p>
                         <h4>
-                            files supported includes SVG, PNG, PDF, TXT, SRT, ZIP, MP3 (max size 3MB)
+                            files supported includes SVG, PNG, PDF, TXT, SRT, ZIP, MP3 (max size 5MB)
                         </h4>
                     </label>
                     <input

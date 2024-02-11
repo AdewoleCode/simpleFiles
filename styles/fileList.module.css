@@ -1,0 +1,71 @@
+.singleFileItemBox{
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid gray;
+    width: 100%;
+
+}
+
+.singleFileItem {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.2s ease-in all;
+    padding: 0.5rem;
+}
+
+.singleFileItem:hover {
+    color: #fff;
+    transform: scaleX(1.03);
+    background: linear-gradient(270deg, #24c6dc, #514a9d);
+}
+
+.singleFileItem .imageName {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.singleFileItem .imageName h2 {
+    font-size: 0.9rem;
+}
+
+.singleFileItem .imageName img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.singleFileItemBox button {
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.singleFileItemBox .delete {
+    color: red;
+}
+
+
+
+/*  */
+
+.fileListContainer {
+    width: 100%;
+    padding: 1rem 1.5rem;
+}
+
+.fileListContainer .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fileListContainer .subHead {
+    display: flex;
+    justify-content: space-between;
+}
