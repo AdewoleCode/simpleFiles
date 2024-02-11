@@ -1,0 +1,32 @@
+
+.newsBox {
+    height: 300px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.newsBox h1 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.newsBox .submitBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.newsBox .submitBox input {
+    width: 300px;
+    padding: 0.4rem 0.6rem;
+
+}
+
+.newsBox .submitBox button{
+    padding: 0.6rem 0.5rem;
+    color: #fff;
+    background: linear-gradient(270deg, #24c6dc, #514a9d);
+}

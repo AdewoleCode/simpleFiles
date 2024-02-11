@@ -14,7 +14,7 @@ const SideNav = ({ showSidebarMobile }) => {
   const menuList = [
    
     {
-      id: 2,
+      id: 0,
       name: 'Upload',
       icon: IoCloudUploadSharp,
       path: "/upload"
@@ -32,7 +32,7 @@ const SideNav = ({ showSidebarMobile }) => {
     //   path: '/upgrade'
     // },
     {
-      id: 4,
+      id: 2,
       name: 'Newsletter',
       icon: BiSolidMessageDetail,
       path: '/news'

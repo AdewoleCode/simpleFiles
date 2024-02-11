@@ -1,6 +1,9 @@
 import { Outfit } from 'next/font/google'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const inter = Outfit({ subsets: ['latin'] })
 
@@ -13,7 +16,10 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>{children}
+          <ToastContainer />
+        </body>
+
       </html>
     </ClerkProvider>
   )
