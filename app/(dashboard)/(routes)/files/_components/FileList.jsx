@@ -4,8 +4,10 @@ import styles from "../../../../../styles/fileList.module.css"
 import { deleteDoc, doc, getFirestore } from 'firebase/firestore'
 import { app } from '@/utils/FirebaseConfig'
 import Spinner from '@/components/spinner/Spinner'
+import { useUser } from '@clerk/nextjs'
 
-const FileList = ({ fileList }) => {
+const FileList = ({ fileList}) => {
+    const user = useUser()
 
     const db = getFirestore(app)
 
@@ -18,8 +20,8 @@ const FileList = ({ fileList }) => {
             <div className={styles.fileListContainer}>
 
                 <div className={styles.top}>
+                    <p>Welcome, <span>{user?.user.firstName}</span> </p>
                     <h2>FILES</h2>
-                    <p>20mb used of 50mb</p>
                 </div>
 
                 <div className={styles.subHead}>

@@ -1,0 +1,30 @@
+
+.storageInfo{
+    width: 200px;
+    border: 1px solid red;
+}
+
+.storageInfo .top{
+    display: flex;
+}
+
+.storageInfo .bar {
+    background: gray;
+    width: 100%;
+    display: flex;
+}
+
+.storageInfo .bar .green{
+    background-color: green;
+    width: 25%;
+}
+
+.storageInfo .bar .blue{
+    background-color: blue;
+    width: 35%;
+}
+
+.storageInfo .bar .yellow {
+    background-color: yellow;
+    width: 15%;
+}

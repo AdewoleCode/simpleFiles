@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from "../../../../../styles/fileList.module.css"
 import { MdDeleteOutline } from "react-icons/md";
 import { useRouter } from 'next/navigation';
-import ConfirmationModal from '@/components/confrimationModal/ConfirmationModal';
+import ConfirmationModal from '@/app/(dashboard)/(routes)/files/_components/confrimationModal/ConfirmationModal';
 
 
 const SingleFileItem = ({ name, size, type, imageSrc, fileDocId, deleteFile, file }) => {

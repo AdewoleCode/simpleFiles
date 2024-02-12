@@ -12,6 +12,8 @@ const Files = () => {
   const db = getFirestore(app)
   const { user } = useUser()
   const [fileList, setFileList] = useState([])
+  const [totalSizeUsed, setTotalizeUsed] = useState(0)
+  let totalFilesMB = 0;
 
   useEffect(() => {
     console.log(user);
@@ -34,6 +36,13 @@ const Files = () => {
     querySnapshot.forEach((doc) => {
       console.log(doc.data());
       setFileList(fileList => ([...fileList, doc.data()]))
+      console.log(doc.data()['size']);
+      // totalFilesMB = totalFilesMB + doc.data()['size']
+      // console.log(totalFilesMB);
+
+      setTotalizeUsed(doc.data()['size'])
+
+      // console.log((totalFilesMB/1024**2).toFixed(2) + "MB");
     })
   }
 
@@ -41,7 +50,7 @@ const Files = () => {
   return (
     <div>
       {
-        user ? <FileList  fileList={fileList} /> : <Spinner />
+        user ? <FileList totalSizeUsed={totalSizeUsed}  fileList={fileList} /> : <Spinner />
       }
 
     </div>
