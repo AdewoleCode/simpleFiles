@@ -37,12 +37,9 @@ const Files = () => {
       console.log(doc.data());
       setFileList(fileList => ([...fileList, doc.data()]))
       console.log(doc.data()['size']);
-      // totalFilesMB = totalFilesMB + doc.data()['size']
-      // console.log(totalFilesMB);
 
       setTotalizeUsed(doc.data()['size'])
 
-      // console.log((totalFilesMB/1024**2).toFixed(2) + "MB");
     })
   }
 
@@ -52,7 +49,6 @@ const Files = () => {
       {
         user ? <FileList totalSizeUsed={totalSizeUsed}  fileList={fileList} /> : <Spinner />
       }
-
     </div>
   )
 }
