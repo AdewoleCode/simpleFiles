@@ -1,4 +1,3 @@
-import React from 'react'
 import SingleFileItem from './SingleFileItem'
 import styles from "../../../../../styles/fileList.module.css"
 import { deleteDoc, doc, getFirestore } from 'firebase/firestore'
@@ -6,7 +5,8 @@ import { app } from '@/utils/FirebaseConfig'
 import Spinner from '@/components/spinner/Spinner'
 import { useUser } from '@clerk/nextjs'
 
-const FileList = ({ fileList}) => {
+const FileList = ({ fileList, fetchingFile }) => {
+
     const user = useUser()
 
     const db = getFirestore(app)
@@ -29,24 +29,26 @@ const FileList = ({ fileList}) => {
                     <p className={styles.size}>size</p>
                     <p className={styles.type}>type</p>
                 </div>
+
+
                 {
-                    fileList.length > 0 ? fileList.map((file, index) => {
-                        return (
-                            <SingleFileItem
-                                file={file}
-                                deleteFile={deleteFile}
-                                key={index}
-                                name={file.fileName}
-                                imageSrc='/file2.png'
-                                type={file.fileType}
-                                size={file.fileSize}
-                                fileDocId={file.id}
-                            />
-                        )
-                    }) : <Spinner />
+                    fetchingFile ? <Spinner /> :
+                        fileList.length > 0 ? fileList.map((file, index) => {
+                            return (
+                                <SingleFileItem
+                                    file={file}
+                                    deleteFile={deleteFile}
+                                    key={index}
+                                    name={file.fileName}
+                                    imageSrc='/file2.png'
+                                    type={file.fileType}
+                                    size={file.fileSize}
+                                    fileDocId={file.id}
+                                />
+                            )
+                        }) : <h1>You currently do not have any file uploaded. please upload a file to share!</h1>
                 }
             </div>
-
         </>
     )
 }

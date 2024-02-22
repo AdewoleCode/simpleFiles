@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { collection, getDocs, where, query, getFirestore, deleteDoc } from 'firebase/firestore'
+import { collection, getDocs, where, query, getFirestore } from 'firebase/firestore'
 import { useUser } from '@clerk/nextjs'
 import FileList from './_components/FileList'
 import { app } from '../../../../utils/FirebaseConfig'
@@ -12,8 +12,7 @@ const Files = () => {
   const db = getFirestore(app)
   const { user } = useUser()
   const [fileList, setFileList] = useState([])
-  const [totalSizeUsed, setTotalizeUsed] = useState(0)
-  let totalFilesMB = 0;
+  const [fetchingFile, setFetchingFile] = useState(false)
 
   useEffect(() => {
     console.log(user);
@@ -27,6 +26,8 @@ const Files = () => {
 
   const getFileList = async () => {
 
+    setFetchingFile(true)
+
     const q = query(collection(db, "uploadedFileData"),
       where("userEmail", "==", user?.primaryEmailAddress.emailAddress,
       ))
@@ -36,18 +37,20 @@ const Files = () => {
     querySnapshot.forEach((doc) => {
       console.log(doc.data());
       setFileList(fileList => ([...fileList, doc.data()]))
-      console.log(doc.data()['size']);
-
-      setTotalizeUsed(doc.data()['size'])
-
     })
+    setFetchingFile(false)
   }
 
 
   return (
     <div>
       {
-        user ? <FileList totalSizeUsed={totalSizeUsed}  fileList={fileList} /> : <Spinner />
+        user ?
+          <FileList
+            fetchingFile={fetchingFile}
+            fileList={fileList}
+          /> :
+          <Spinner />
       }
     </div>
   )
